@@ -14,7 +14,8 @@
         "laravel/tinker": "^2.5",
         "tcg/voyager": "^1.5",
         "ext-gd":" *",
-        "ext-exif":"*"
+        "ext-exif":"*",
+        "aws/aws-sdk-php": "~2.6"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
@@ -22,7 +23,8 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5.10",
+        "heroku/heroku-buildpack-php": "*"
     },
     "autoload": {
         "psr-4": {
