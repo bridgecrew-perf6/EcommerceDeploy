@@ -69,6 +69,11 @@ class OrderController extends BaseController
     {
 
         $order = Order::where('order_user_id', $id)->get();
+        // loop for order and get order id 
+        foreach ($order as $key => $value) {
+            $order_item = OrderItem::where('order_id', $value->id)->get();
+            $order[$key]['order_item'] = $order_item;
+        }
         if (!Order::where('order_user_id', $id)->exists()) {
             $response = ["message" => 'Order does not exist'];
             return response($response, 422);
@@ -87,7 +92,7 @@ class OrderController extends BaseController
         $order_items = OrderItem::where('order_id', $order->id)->get();
         return response([$order, "order_item" => $order_items], 200);
     }
-
+    
     // delete one order with all related order item
     public function deleteOrder($id)
     {
